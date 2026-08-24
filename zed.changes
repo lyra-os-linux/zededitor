@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Mon Aug 24 15:30:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
+
+- Exclude the private, RPATH-loaded libraries from automatic library
+  Requires as well as Provides; the bundled libffi.so.7 was otherwise
+  pulled in as an unsatisfiable system dependency on hosts that ship a
+  newer libffi.
+
+-------------------------------------------------------------------
 Mon Aug 24 12:00:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
 
 - Package upstream Zed 1.16.1 from the official Linux release tarball.

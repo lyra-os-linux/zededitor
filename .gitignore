@@ -10,3 +10,6 @@ LICENSE-APACHE
 # Logs and temp files
 *.log
 .DS_Store
+
+# Python test cache
+__pycache__/

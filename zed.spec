@@ -17,8 +17,11 @@ ExclusiveArch:  x86_64
 
 # The upstream tarball bundles private copies of a handful of X11/GLib
 # libraries next to the binaries and loads them through a $ORIGIN-relative
-# RPATH; they must not be advertised as system-wide library Provides.
+# RPATH; they must not be advertised as system-wide library Provides, nor
+# pull in system Requires for what they themselves link against (e.g.
+# libffi.so.7), since that copy is resolved from the RPATH, not the system.
 %global __provides_exclude_from ^%{_libexecdir}/zed/lib/.*\\.so.*$
+%global __requires_exclude_from ^%{_libexecdir}/zed/lib/.*\\.so.*$
 
 %description
 Zed is a high-performance, multiplayer code editor with built-in
