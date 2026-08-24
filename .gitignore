@@ -1,0 +1,12 @@
+# RPM build artifacts
+*.rpm
+*.src.rpm
+*.tar.gz
+
+# Downloaded license files (fetched by _service, not committed)
+LICENSE-GPL
+LICENSE-APACHE
+
+# Logs and temp files
+*.log
+.DS_Store

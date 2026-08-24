@@ -1,0 +1,26 @@
+# The upstream tarball bundles private copies of a handful of X11/GLib/util
+# libraries next to the binaries, loaded only through Zed's own
+# $ORIGIN-relative RPATH (see zed.spec). They intentionally live outside any
+# ldconfig-scanned directory and are excluded from RPM's automatic library
+# Provides, so rpmlint's generic "this is a system shared library" checks
+# below do not apply to them.
+addFilter("E: missing-hash-section /usr/libexec/zed/lib/")
+addFilter("E: library-without-ldconfig-postin /usr/libexec/zed/lib/")
+addFilter("E: library-without-ldconfig-postun /usr/libexec/zed/lib/")
+addFilter("E: missing-call-to-setgroups-before-setuid /usr/libexec/zed/lib/")
+addFilter("W: binary-or-shlib-calls-gethostbyname /usr/libexec/zed/lib/")
+
+# hicolor-icon-theme is the plain base icon-theme package, not a
+# Lyra/openSUSE branding subpackage; this finding is a false positive of the
+# branding-requires check against that name.
+addFilter("E: branding-requires-unversioned hicolor-icon-theme")
+
+# "renderer" and "prebuilt" are ordinary English words missing from this
+# checker's dictionary.
+addFilter("E: spelling-error .* renderer")
+addFilter("E: spelling-error .* prebuilt")
+
+# The RPM changelog lives in zed.changes, filled in by OBS from %changelog
+# at release time; the empty %changelog stanza in zed.spec is intentional,
+# matching every other Lyra-packaged third-party app.
+addFilter("E: no-changelogname-tag")

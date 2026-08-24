@@ -1,0 +1,8 @@
+-------------------------------------------------------------------
+Mon Aug 24 12:00:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
+
+- Package upstream Zed 1.16.1 from the official Linux release tarball.
+- Point the auto-updater at Zypper via ZED_UPDATE_EXPLANATION; updates are
+  delivered exclusively through the signed Lyra OBS repository.
+- Strip the bundled binaries and exclude the private, RPATH-loaded
+  libraries from automatic library Provides.

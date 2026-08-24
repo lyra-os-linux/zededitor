@@ -1,0 +1,6 @@
+#!/bin/sh
+# Zed's bundled auto-updater silently no-ops on a read-only install; this
+# explains why to anyone who triggers it anyway. See
+# https://zed.dev/docs/update.
+export ZED_UPDATE_EXPLANATION="Zed e gerenciado pelo Lyra OS. Atualize pelo atualizador do sistema ou pelo Zypper."
+exec /usr/libexec/zed/bin/zed "$@"
