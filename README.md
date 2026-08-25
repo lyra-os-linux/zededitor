@@ -21,6 +21,20 @@ This package is not Lyra-authored application code; it is packaging
 metadata only. Upstream license and source stay in the tarball fetched by
 `_service`.
 
+## Validation
+
+Every push to `main` and pull request runs:
+
+```sh
+python3 -m unittest discover -s tests -v
+rpmspec -P zed.spec >/dev/null
+bash -n zed-launcher
+```
+
+The tests require all upstream sources and both licenses to use one pinned
+tag, HTTPS and explicit SHA-256 checksums. They also gate the desktop entry,
+license installation, bundled-library isolation and Zypper update redirect.
+
 ## Credits
 
 Zed is developed by [Zed Industries](https://zed.dev/) and its open-source
