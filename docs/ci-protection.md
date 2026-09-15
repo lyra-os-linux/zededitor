@@ -9,6 +9,10 @@ to administrators (`enforce_admins=true`). Changes use pull requests; no extra
 reviewer approval is required. Force pushes and branch deletion are disabled.
 This policy is configured in GitHub settings, not by this Markdown file.
 
+The project has one GitHub maintainer. Required approvals remain at zero,
+with no code-owner or last-push approval requirement, so the same account can
+open and merge its own PR after CI passes. A second reviewer is not required.
+
 ## Coverage and limits
 
 The existing workflow runs five Python tests, parses the RPM spec with
@@ -35,8 +39,21 @@ On 2026-09-15 the API returned HTTP 404 (`Branch not protected`) for `main`.
 The branch reported `protected=false`, and its applicable-rules query returned
 an empty list. Protection therefore had to be created.
 
-Merge-blocking and passing-run evidence is recorded in
-[issue #1](https://github.com/lyra-os-linux/zededitor/issues/1).
+[PR #2](https://github.com/lyra-os-linux/zededitor/pull/2) exercised actual merge
+requests using the administrator account and the exact head revision
+`f72c837b599de34a930b62133b5995f6cd8aeb89`:
+
+| Required check state | Merge response |
+| --- | --- |
+| Running | HTTP 405: `Required status check "validate" is in progress.` |
+| Intentionally failed | HTTP 405: `Required status check "validate" is failing.` |
+
+The [controlled run](https://github.com/lyra-os-linux/zededitor/actions/runs/34997085580)
+used a temporary failure step limited to that PR branch. Both refusals left
+`main` at `66a97960564912edbcac6d18a80e5aba3ef5d1e9`. The probe was then removed,
+restoring the workflow byte for byte before running the full CI and integrating
+this documentation. The final passing run and successful squash merge receipt
+are recorded in [issue #1](https://github.com/lyra-os-linux/zededitor/issues/1).
 
 ## Exceptions and recovery
 
