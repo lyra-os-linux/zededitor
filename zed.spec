@@ -1,5 +1,5 @@
 Name:           zed
-Version:        1.16.1
+Version:        1.26.2
 Release:        0
 %global debug_package %{nil}
 Summary:        High-performance, multiplayer code editor
