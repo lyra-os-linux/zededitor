@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Nov  2 12:00:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
+
+- Update to upstream Zed 1.26.2.
+- Pin the new release tarball by SHA-256 (matches the GitHub release
+  asset digest); LICENSE-GPL and LICENSE-APACHE are unchanged.
+
+-------------------------------------------------------------------
 Mon Aug 24 15:30:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
 
 - Exclude the private, RPATH-loaded libraries from automatic library
