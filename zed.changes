@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Nov 23 11:10:00 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
+
+- Update to upstream Zed 1.29.3.
+- Pin the new release tarball by SHA-256 (matches the GitHub release
+  asset digest); LICENSE-GPL and LICENSE-APACHE are unchanged.
+
+-------------------------------------------------------------------
 Thu Nov 19 11:21:55 UTC 2026 - Lyra OS Release <rodrigo@lyraos.com.br>
 
 - Update to upstream Zed 1.29.1 (lyra-ecosystem#92).
