@@ -2,17 +2,17 @@
   <service name="download_url">
     <param name="protocol">https</param>
     <param name="host">github.com</param>
-    <param name="path">/zed-industries/zed/releases/download/v1.29.3/zed-linux-x86_64.tar.gz</param>
+    <param name="path">/zed-industries/zed/releases/download/v1.30.2/zed-linux-x86_64.tar.gz</param>
   </service>
   <service name="verify_file">
     <param name="file">_service:download_url:zed-linux-x86_64.tar.gz</param>
     <param name="verifier">sha256</param>
-    <param name="checksum">44b0f350aa7bf4551d1b0aaa2d3b673a6de2c03bc5e979b3592fd2180b4f77c1</param>
+    <param name="checksum">210e6a08dc5343123254dfa9b9dd7a6e828e6ac2b10f98cd4ed1bd7d68cca2df</param>
   </service>
   <service name="download_url">
     <param name="protocol">https</param>
     <param name="host">raw.githubusercontent.com</param>
-    <param name="path">/zed-industries/zed/v1.29.3/LICENSE-GPL</param>
+    <param name="path">/zed-industries/zed/v1.30.2/LICENSE-GPL</param>
   </service>
   <service name="verify_file">
     <param name="file">_service:download_url:LICENSE-GPL</param>
@@ -22,7 +22,7 @@
   <service name="download_url">
     <param name="protocol">https</param>
     <param name="host">raw.githubusercontent.com</param>
-    <param name="path">/zed-industries/zed/v1.29.3/LICENSE-APACHE</param>
+    <param name="path">/zed-industries/zed/v1.30.2/LICENSE-APACHE</param>
   </service>
   <service name="verify_file">
     <param name="file">_service:download_url:LICENSE-APACHE</param>
